@@ -1,0 +1,113 @@
+<body> {
+    /*First Lesson*/
+    background-color:#cefbff;
+}
+<header> {
+/*First Lesson*/
+    background-color:#d4b1ff;
+}
+<nav> {
+/*First Lesson*/
+    background-color:#ffdafd;
+}
+#intro {
+/*First Lesson*/
+    background-color:#dafdff;
+    /*Second Lesson*/
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+ font-family: Arial, Helvetica, sans-serif; font-family: Arial, Helvetica, sans-serif;
+
+
+#bestsellers,
+footer {
+  /* first lesson*/
+  background-color: rgb(134, 154, 255);
+}
+
+header,
+nav,
+#intro,
+#main-section,
+#bestsellers,
+footer {
+  /* first lesson*/
+  border: 1px solid black;
+}
+
+header,
+nav,
+#main-section {
+  /* first lesson*/
+  border-radius: 10px;
+}
+h1 {
+  /* firsth lesson*/
+  color: white;
+  /*second lesson*/
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2,
+p {
+      /* first lesson*/
+  color: #333333;
+}
+table,
+th,
+td {
+  /* first lesson*/
+  border: 1px solid black;
+}
+tr:last-child {
+  /* first lesson*/
+  color: rgb(190, 239, 255);
+}
+span {
+  /* first lesson*/
+  color: rgb(253, 198, 247);
+}
+footer p:first-child span {
+  /* first lesson*/
+  color: rgb(217, 178, 255);
+}
+.teacher-info {
+  /* first lesson*/
+  border-radius: 5px;
+}
+
+button {
+  /*first lesson*/
+  background-color: rgb(255, 159, 218);
+  color: white;
+  /*second-lesson*/ 
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*second lesson*/
+ul {
+  list-style-type: none;
+}
+li a {
+  text-decoration: none;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 600;
+}
+li a:hover {
+  color: rgb(255, 159, 218);
+}
+
+p {
+    font-size: 18px;
+}
+
+h3{
+    font-size: 20px;
+    font-family:  Arial, Helvetica, sans-serif;
+      text-decoration: underline;
+}
+
+
