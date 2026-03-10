@@ -1,29 +1,41 @@
-<body> {
-    /*First Lesson*/
-    background-color:#cefbff;
+body {
+    /* first lesson*/
+    background-color: #cccccc;
 }
-<header> {
-/*First Lesson*/
-    background-color:#d4b1ff;
+
+header {
+    /* first lesson*/
+    background-color: rgb(210, 244, 255);
 }
-<nav> {
-/*First Lesson*/
-    background-color:#ffdafd;
+
+nav {
+    /* first lesson*/
+    background-color: rgb(255, 202, 204);
 }
+
 #intro {
-/*First Lesson*/
-    background-color:#dafdff;
-    /*Second Lesson*/
-     font-family: Arial, Helvetica, sans-serif;
+    /* first lesson*/
+    background-color: lightpink;
+    /*second lesson*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*third lesson*/
+    text-align: center;
 }
 
- font-family: Arial, Helvetica, sans-serif; font-family: Arial, Helvetica, sans-serif;
-
-
-#bestsellers,
+.main-section-content h2 {
+    /* first lesson*/
+    background-color: darkkhaki;
+    /*second lesson*/
+    font-family: Arial, Helvetica, sans-serif;
+    /* third lesson*/
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 50px
+    #bestsellers,
 footer {
-  /* first lesson*/
-  background-color: rgb(134, 154, 255);
+    /* first lesson */
+    background-color: lightyellow;
 }
 
 header,
@@ -32,49 +44,61 @@ nav,
 #main-section,
 #bestsellers,
 footer {
-  /* first lesson*/
-  border: 1px solid black;
+    /* first lesson */
+    border: 1px solid black;
 }
 
 header,
 nav,
 #main-section {
-  /* first lesson*/
-  border-radius: 10px;
+    /* first lesson */
+    border-radius: 10px;
 }
+
 h1 {
-  /* firsth lesson*/
-  color: white;
-  /*second lesson*/
-  font-size: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+    /* first lesson */
+    color: white;
+    /* second lesson */
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Third Lesson */
+    margin: 30px;
 }
 h2,
 p {
-      /* first lesson*/
+  /* first lesson*/
   color: #333333;
 }
+
 table,
 th,
 td {
   /* first lesson*/
   border: 1px solid black;
 }
+
 tr:last-child {
   /* first lesson*/
-  color: rgb(190, 239, 255);
+  color: red;
 }
+
 span {
   /* first lesson*/
-  color: rgb(253, 198, 247);
+  color: blue;
 }
+
 footer p:first-child span {
   /* first lesson*/
-  color: rgb(217, 178, 255);
+  color: red;
 }
+
 .teacher-info {
   /* first lesson*/
   border-radius: 5px;
+  /* third lesson*/
+  margin: 10px;
+  width: 400px;
+  box-shadow: 0px 0px 21px -3px #333333;
 }
 
 button {
