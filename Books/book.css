@@ -1,0 +1,40 @@
+body {
+    /* first lesson*/
+    background-color: #cbc8ff;
+}
+header {
+    /* first lesson*/
+    background-color: rgb(243, 151, 255);
+}
+nav {
+/*first lesson*/
+background-color: rgb(159, 233, 255);
+/*forth lesson*/
+position: sticky;
+top: 0;
+z-index: 2;
+}
+#intro {
+    /*first lesson*/
+background-color: rgb(159, 233, 255);
+/*secound lesson*/
+font-family: Arial, Helvetica, sans-serif;
+/*Third Lesson*/
+text-align: center;
+}
+
+.main-section-content h2 { 
+    /*First Lesson*/
+background-color: azure;
+/*Second Lesson*/
+font-family: Arial, Helvetica, sans-serif;
+     /*third Lesson*/
+     padding: 5px;
+     font-size: 24px;
+     text-align:center
+     margin-bottom: 50px
+}
+
+
+#bestsellers,
+
