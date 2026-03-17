@@ -116,6 +116,25 @@ button {
   bottom: 40px;
 }
 
+
+/* fifth lesson */
+
+#videos div{
+  display: flex;
+  justify-content: space-around;
+}
+
+#teachers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+ nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*second lesson*/
 ul {
   list-style-type: none;
