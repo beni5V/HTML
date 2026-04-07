@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion Boutique</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+        }
+
+        .jumbotron {
+            background-image: url("images(1).jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            color: black;
+        }
+
+        header {
+            background-color: rgba(189, 255, 186, 0.8);
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        .btn {
+            background-color: rgb(255, 142, 241);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgb(200, 100, 190);
+        }
+
+        /* Location Box */
+        .location-box {
+            margin-top: 25px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="jumbotron">
+    <header>
+        <h1>Fashion Boutique</h1>
+        <p>
+            Welcome to our fashion boutique! We offer stylish clothing for all occasions.
+        </p>
+    </header>
+
+    <br>
+
+    <!-- Shop Button -->
+    <a href="shop.html" class="btn">Shop Now</a>
+
+    <!-- Location Input -->
+    <div class="location-box">
+        <p><b>Enter your location:</b></p>
+        <input type="text" id="location" placeholder="e.g. Lahore, Karachi">
+        <br>
+        <button class="btn" onclick="showLocation()">Submit</button>
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+<script>
+    function showLocation() {
+        var loc = document.getElementById("location").value;
+
+        if(loc === "") {
+            alert("Please enter your location!");
+        } else {
+            alert("You are shopping from: " + loc);
+        }
+    }
+</script>
+
+</body>
+</html>
