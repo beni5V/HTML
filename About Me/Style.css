@@ -1,9 +1,49 @@
 body {
-  background-color: #f0f0f0; /* Light gray background */
+  button {
+    display: block;
+    margin: 20px auto; /* Centers the button horizontally */
+
+    background-color: #3498db; /* Nice blue color */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-h1 {
-  color: rgb(70, 66, 95); /* Blue text color for the heading */
-  text-align: center; /* Center the heading text */
-  font-family: sans-serif;
+/* Hover */
+button:hover {
+    background-color: #2c80b4; /* Darker blue */
+    transform: scale(1.1);
+}
+  background: linear-gradient(to right, #dfe9f3, #ffffff);
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;   /* Horizontal center */
+    align-items: center;       /* Vertical center */
+    height: 100vh;             /* Full screen height */
+    margin: 0;
+}
+
+/* Container stays centered */
+.container {
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;   /* Stack items vertically */
+    align-items: center;      /* Center them horizontally */
+    gap: 15px;                /* Space between text and button */
+
+    background-color: white;
+    margin: 40px auto;
+    padding: 30px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
