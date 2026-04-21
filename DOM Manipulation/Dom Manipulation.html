@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dom Manipulation|Tutorial</title>
+    <style>
+        .alert{
+            color: rgb(0, 0, 0);
+            background: rgb(193, 255, 255);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+      <div class="container">
+   <header style="background-color: rgb(255, 174, 255);" float="left">
+        <h1 style="text-align: center;">Dom Manipulation| Tutorial</h1></div>
+    </header>
+    <h1 id="heading">This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <script>
+        /* First Step:- Do this step first*/
+        let div = document.createElement('div');
+        div.id = "paragraph";
+        div.className = "alert";
+        div.innerHTML = "<p>Congrats! You have created a div. </p>";
+        document.body.append(div);
+
+        /* Second Step:- Do this after completing second step*/
+        let heading = document.getElementById("heading");
+        heading.innerHTML = '&#128512;';
+
+        /* Third Step:- Do this after completing second step*/
+        document.querySelector('header p').innerHTML = "<strong>Good Job!</strong>";
+    </script>
+</body>
+</html>
