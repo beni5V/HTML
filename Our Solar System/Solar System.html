@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Solar System</title>
+
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0b1d2a, #000);
+  color: white;
+  text-align: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(45deg, #87abff, #99f8ee);
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+/* CONTAINER */
+.container {
+  padding: 20px;
+}
+
+/* BUTTONS */
+button {
+  padding: 12px 18px;
+  margin: 10px;
+  border: none;
+  background: linear-gradient(45deg, #ff6b4a, #ff2e63);
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+/* PLANET CARD */
+.planet {
+  margin: 20px auto;
+  padding: 15px;
+  width: 260px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  animation: fadeIn 0.6s ease;
+  transition: 0.3s;
+}
+
+.planet:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255,255,255,0.6);
+}
+
+/* IMAGE SIZE (200x300) */
+.planet img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  animation: float 3s infinite ease-in-out;
+}
+
+/* TEXT */
+.planet h4 {
+  margin: 5px 0;
+}
+
+.planet p {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* STARS BACKGROUND */
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+</style>
+</head>
+
+<body>
+
+<header>🌌 Our Solar System</header>
+
+<div class="container">
+<p id="description">
+The solar system consists of the Sun and the objects that orbit it, including planets, moons, and asteroids.
+</p>
+
+<h3>🪐 Planets</h3>
+<div id="planetList"></div>
+
+<button onclick="addPlanet()">➕ Add Planet</button>
+<button onclick="changeDescription()">✏️ Change Description</button>
+<button onclick="removePlanets()">🗑️ Clear Planets</button>
+</div>
+
+<script>
+const planets = [
+  {
+    name: "Mercury",
+    img: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg",
+    desc: "Mercury is the closest planet to the Sun and the smallest in the solar system."
+  },
+  {
+    name: "Venus",
+    img: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg",
+    desc: "Venus is the hottest planet with a thick atmosphere full of carbon dioxide."
+  },
+  {
+    name: "Earth",
+    img: "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
+    desc: "Earth is the only planet known to support life and has water in liquid form."
+  },
+  {
+    name: "Mars",
+    img: "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+    desc: "Mars is called the Red Planet and may have had water in the past."
+  },
+  {
+    name: "Jupiter",
+    img: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
+    desc: "Jupiter is the largest planet and has a giant storm called the Great Red Spot."
+  },
+  {
+    name: "Saturn",
+    img: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+    desc: "Saturn is famous for its beautiful rings made of ice and rock."
+  },
+  {
+    name: "Uranus",
+    img: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
+    desc: "Uranus rotates on its side and has a pale blue color due to methane gas."
+  },
+  {
+    name: "Neptune",
+    img: "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg",
+    desc: "Neptune is the farthest planet and has the strongest winds in the solar system."
+  }
+];
+
+let index = 0;
+
+function addPlanet() {
+  if (index < planets.length) {
+    const div = document.createElement("div");
+    div.className = "planet";
+
+    div.innerHTML = `
+      <img src="${planets[index].img}">
+      <h4>🪐 ${planets[index].name}</h4>
+      <p>${planets[index].desc}</p>
+    `;
+
+    document.getElementById("planetList").appendChild(div);
+    index++;
+  } else {
+    alert("✨ All planets added!");
+  }
+}
+
+function changeDescription() {
+  document.getElementById("description").innerHTML =
+    "✨ The Solar System has 8 planets orbiting the Sun. Each planet is unique in size, composition, and atmosphere.";
+}
+
+function removePlanets() {
+  document.getElementById("planetList").innerHTML = "";
+  index = 0;
+}
+</script>
+
+</body>
+</html>
