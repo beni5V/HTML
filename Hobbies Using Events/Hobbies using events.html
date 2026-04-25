@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hobbies using events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #9bffe9, #78d2ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #74ebd5;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #9883ff;
+            color: #333;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #9883ff;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Enter your hobby</h1>
+    <input type="text" id="hobbyInput" placeholder="Type your hobby here">
+    <br>
+    <button onclick="showHobby()">Submit</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function showHobby() {
+        let hobby = document.getElementById("hobbyInput").value;
+
+        if (hobby.trim() === "") {
+            document.getElementById("result").innerText = "Please Enter a Hobby!";
+        } else {
+            document.getElementById("result").innerText = "Your hobby is: " + hobby;
+        }
+    }
+</script>
+
+</body>
+</html>
