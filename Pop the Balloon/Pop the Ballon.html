@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<div id='scoreBox'> </div>
+<style>
+  #balloon {
+    position: absolute;
+    -webkit-transition: all 0.1s;
+    height: 100px;
+  }
+</style>
+<body style="background-color: rgb(247, 255, 135);">
+<img id='balloon' src='balloon-removebg-preview.png'>
+<script>
+  var balloon = document.getElementById('balloon');
+  balloon.addEventListener('click', clickedIt);
+  var score = 0, count = 0;
+
+  function clickedIt() {
+    score++;
+    scoreBox.innerHTML = 'score: ' + score;
+    balloon.style.height = '1px';
+  }
+
+  function moveIt() {
+    balloon.style.height = '100px';
+    balloon.style.left = Math.random() * 500 + 'px';
+    balloon.style.top = Math.random() * 500 + 'px';
+    count++;
+    if (count > 10) {
+      alert('game over!');
+      clearInterval(timer);
+    }
+  }
+
+  var timer = setInterval(moveIt, 1000);
+</script>
+</body>
+</html>
