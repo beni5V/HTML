@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern Footer Page</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to right, #141e30, #243b55);
+      color:white;
+      min-height:100vh;
+    }
+
+    /* Navbar */
+    .navbar{
+      background:black;
+      padding:15px;
+      text-align:center;
+    }
+
+    .navbar a{
+      color:white;
+      text-decoration:none;
+      margin:15px;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .navbar a:hover{
+      color:#00ffd5;
+    }
+
+    /* Main Body */
+    .hero{
+      text-align:center;
+      padding:120px 20px;
+    }
+
+    .hero h1{
+      font-size:55px;
+      margin-bottom:20px;
+      color:#00ffd5;
+    }
+
+    .hero p{
+      font-size:20px;
+      width:70%;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    .btn{
+      margin-top:30px;
+      padding:15px 35px;
+      border:none;
+      background:#00ffd5;
+      color:black;
+      font-size:18px;
+      border-radius:30px;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      background:white;
+      transform:scale(1.1);
+    }
+
+    /* Cards */
+    .container{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:50px;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      background:white;
+      color:black;
+      width:280px;
+      padding:25px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.4s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h2{
+      margin-bottom:15px;
+      color:#243b55;
+    }
+
+    /* Footer */
+    .footer{
+      position:fixed;
+      left:0;
+      bottom:0;
+      width:100%;
+      background:rgb(157, 255, 214);
+      color:white;
+      text-align:center;
+      padding:15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome To My Website 🚀</h1>
+
+    <p>
+      This is a beautiful modern webpage made using HTML and CSS.
+      It contains a navbar, hero section, cards, button effects,
+      and a fixed footer.
+    </p>
+
+    <button class="btn">Explore More</button>
+  </div>
+
+  <!-- Cards -->
+  <div class="container">
+
+    <div class="card">
+      <h2>🌟 Design</h2>
+      <p>Modern and responsive webpage design with hover effects.</p>
+    </div>
+
+    <div class="card">
+      <h2>⚡ Speed</h2>
+      <p>Fast and lightweight website built using pure HTML and CSS.</p>
+    </div>
+
+    <div class="card">
+      <h2>📱 Responsive</h2>
+      <p>Looks beautiful on desktop, tablet, and mobile devices.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>@ All Rights Reserved</p>
+  </div>
+
+</body>
+</html>
