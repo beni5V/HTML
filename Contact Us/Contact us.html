@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #dff6ff, #ffffff);
+        }
+
+        /* Navbar */
+        .topnav{
+            background-color:#00b4d8;
+            overflow:hidden;
+            padding:10px;
+        }
+
+        .topnav a{
+            color:white;
+            text-decoration:none;
+            padding:14px 20px;
+            float:left;
+            font-size:18px;
+        }
+
+        .topnav a:hover{
+            background:white;
+            color:#00b4d8;
+            border-radius:5px;
+        }
+
+        /* Contact Section */
+        .contact-section{
+            width:80%;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        .contact-section h1{
+            color:#0096c7;
+            font-size:40px;
+        }
+
+        .contact-section p{
+            color:#555;
+            font-size:18px;
+        }
+
+        /* Form */
+        .contact-form{
+            margin-top:30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea{
+            width:80%;
+            padding:15px;
+            margin:10px 0;
+            border:2px solid #00b4d8;
+            border-radius:10px;
+            font-size:16px;
+        }
+
+        .contact-form textarea{
+            height:120px;
+            resize:none;
+        }
+
+        .contact-form button{
+            background:#00b4d8;
+            color:white;
+            border:none;
+            padding:15px 35px;
+            font-size:18px;
+            border-radius:10px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .contact-form button:hover{
+            background:#0077b6;
+            transform:scale(1.05);
+        }
+
+        /* Contact Info */
+        .info{
+            margin-top:30px;
+            font-size:18px;
+            color:#333;
+        }
+
+        .info span{
+            display:block;
+            margin:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="topnav">
+       
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div class="contact-section">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            We'd love to hear from you!  
+            Send us your message and we will reply soon.
+        </p>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+
+            <input type="text" placeholder="Enter Your Name">
+
+            <br>
+
+            <input type="email" placeholder="Enter Your Email">
+
+            <br>
+
+            <textarea placeholder="Write Your Message"></textarea>
+
+            <br>
+
+            <button>Send Message</button>
+
+        </div>
+
+        <!-- Contact Information -->
+        <div class="info">
+            <span>📞 Phone: +92 300 1234567</span>
+            <span>📧 Email: example@gmail.com</span>
+            <span>📍 Address: Rawalpindi, Pakistan</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
