@@ -1,0 +1,3 @@
+Welcome to my Lines in File project
+I Hope you can see this text when you run my project.
+Lines in File by Sarah.
