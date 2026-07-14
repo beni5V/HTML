@@ -1,0 +1,2 @@
+Hi!I am Sarah. I am 11 years old
+ File in append mode......Hi! I am Sarah. I am 11 years old
