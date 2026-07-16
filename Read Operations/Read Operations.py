@@ -9,7 +9,7 @@ file_write.write("File in write mode ..........")
 file_write.write("Hi! I am Penguin. I am 1 yr. old")
 file_write.close()
 
-file_append = open("Condngal.txt", "a")
+file_append = open("Condingal.txt", "a")
 file_append.write("\n File in append")
 file_append.write("Hi! I am Penguin. I am 1 yr. old")
 file_append.close()
