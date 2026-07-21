@@ -10,3 +10,4 @@ with open('Codingal .txt', 'r') as file:
     print (word)
 file.close()
 
+
