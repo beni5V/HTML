@@ -1,7 +1,0 @@
-Maths: Learn equations today
-Coding: Variables and loops
-Science: Photosynthesis
-Coding: If statements
-English: Essay writing
-Coding: Functions and recursion
-History: World War II
