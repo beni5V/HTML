@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palindrome Color</title>
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      padding-top: 100px;
+      transition: 0.5s;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+        background-color: #38415b;
+        color: white;
+    }
+
+    #colorCode {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Palindrome Color 🎨</h1>
+
+  <p id="colorCode">#ABCCBA</p>
+
+  <button onclick="changeColor()">Random Color</button>
+
+  <script>
+    function changeColor() {
+      const characters = "0123456789ABCDEF";
+
+      let firstHalf = "";
+
+      for (let i = 0; i < 3; i++) {
+        firstHalf += characters[Math.floor(Math.random() * 16)];
+      }
+      let palindrome = firstHalf + firstHalf.split("").reverse().join("");
+
+      let color = "#" + palindrome;
+
+      document.body.style.backgroundColor = color;
+      document.getElementById("colorCode").textContent = color;
+    }
+  </script>
+
+</body>
+</html>
