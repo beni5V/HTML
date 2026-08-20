@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background-color: beige;
+    font-family: Helvectica, sans-serif;
+}
+
+#dice {
+    font-size: 320px;
+}
+
+#dice:hover {
+    cursor:pointer;
+}
+
