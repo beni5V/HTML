@@ -1,0 +1,6 @@
+print ("Hi! My name is Syeda Sarah and I love coding!")
+print("I study in grade 6 and my favorite subject is Math, Science, English and ICT.")
+print ("I am currently learning Python programming language and I am excited to explore more about it.")
+print ("My dream is to travel to different countries and experience their cultures. I especially want to visit Australia.")
+print ("My hobbies include coding, drawing, and writing short stories about my adventures.")
+print ("My favorite color is blue and my favorite number is 12 since it is a highly composite number.")
