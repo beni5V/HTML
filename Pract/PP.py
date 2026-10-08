@@ -23,7 +23,7 @@ print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 #While loop
 i = 1
-while i < 10000000:
+while i < 1:
     print(i)
     i += 1
 # Declaring a sample function
@@ -56,7 +56,29 @@ def sample_fun(name):
 
 sample_fun("Python")
 
-print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
-# Tuples
+#OOP-1
+class fruit:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def intro(self):
+        print("hello, I am", self.name)
+apple = fruit("apple", "red")
+apple.intro()
+
+#OOP-1.1
+class fruit:
+    taste = "sweet"
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+apple = fruit("apple", "red")
+banana = fruit("banana", "yellow")
+print(apple.taste)
+print(apple.name,apple.color)
+print(banana.name,banana.color)
 
