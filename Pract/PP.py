@@ -70,15 +70,54 @@ apple = fruit("apple", "red")
 apple.intro()
 
 #OOP-1.1
-class fruit:
-    taste = "sweet"
-    def __init__(self, name, color):
+#class fruit:
+    #taste = "sweet"
+   # def __init__(self, name, color):
+       # self.name = name
+    #    self.color = color
+
+    #apple = fruit("apple", "red")
+    # banana = fruit("banana", "yellow")
+   #print(apple.taste)
+   #print(apple.name,apple.color)
+  #print(banana.name,banana.color)
+
+print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+#OOP-2  method that runs automatically the moment you create an object.
+class Playlist:
+    def __init__(self):
+        self.name = "Stray kids favv by S4B"
+
+p = Playlist()
+print(p.name)
+
+#Parametirized constructor: every object starting with its own custom data.
+class Playlist:
+    def __init__(self, name, genre):
         self.name = name
-        self.color = color
+        self.genre = genre
+        print (f"Playlist '{self.name}' of genre '{self.genre}' has been created.")
 
-apple = fruit("apple", "red")
-banana = fruit("banana", "yellow")
-print(apple.taste)
-print(apple.name,apple.color)
-print(banana.name,banana.color)
+p = Playlist("Stray kids favv by S4B", "K-pop")
 
+#Default Attribute Intailization: If you want to create a class with default attributes, you can do so by providing default values for the attributes in the constructor. This way, when an object is created without specifying values for those attributes, the default values will be used.
+class Playlist:
+    def __init__(self, name, genre):
+        self.name = name
+        self.genre = genre
+        self.songs = []    #Default always starts empty.
+
+p1 = Playlist("Stray kids favv by S4B", "K-pop")
+p2 = Playlist("Bring the energy", "Hip-hop and Electronic K-pop")
+
+class Playlist:
+    def __init__(self, name, genre):
+        self.name  = name
+        self.genre = genre
+        self.songs = []
+
+    def __del__(self):
+        print(f"Playlist '{self.name}' has been deleted. Goodbye!")
+
+my_mix = Playlist("Road Trip Mix", "Pop")
+del my_mix  
