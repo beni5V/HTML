@@ -29,13 +29,21 @@ class ArtGallery:
             print("No artworks have been added yet.")
 
     def search_artwork(self, artwork):
-        found = [
-            item for item in self.artworks
-            if artwork.lower() in item.lower()
-        ]
-
-        if found:
-            print("\nArtwork search results:")
-            for item in found:
-                print(f"- {item}")
+        if artwork in self.artworks:
+            print(f"'{artwork}' was found in the gallery.")
         else:
+            print(f"'{artwork}' was not found in the gallery.")
+
+gallery = ArtGallery("Creative World", "Lahore")
+
+gallery.add_artwork("Starry Night")
+gallery.add_artwork("Mona Lisa")
+gallery.add_artwork("The Scream")
+
+gallery.display_artworks()
+
+gallery.search_artwork("Mona Lisa")
+
+gallery.remove_artwork("The Scream")
+
+gallery.display_artworks()
