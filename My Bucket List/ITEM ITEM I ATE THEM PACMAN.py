@@ -1,0 +1,27 @@
+file = open("S-class.txt","w")
+file.write("1. Visit England")
+file.write("2. Learn to play Drums")
+file.write("3. Start my own bussiness")
+file.close()
+print("Bucket list saved to S-class.txt!")
+
+file = open("S-class.txt","r")
+content = file.read()
+print("\n=== My Bucket list ===")
+print(content)
+
+file = open("S-class.txt","r")
+lines = file.readlines()
+print(f"You have {len(lines)} items on your bucket list")
+file.close()
+
+file = open("S-class.txt","a")
+file.write("4. Meet the Aussie bros")
+file.write("5. Run 1cm race with ants")
+file.close()
+print("\n2 more items added!")
+
+file = open("S-class.txt","r")
+print("\n=== Updated Bucket List ===")
+print(file.read())
+file.close()
