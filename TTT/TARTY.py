@@ -1,7 +1,5 @@
-
 file_name = "shopping_list.txt"
 
-# 1. Create and write the shopping list
 shopping_file = open(file_name, "w", encoding="utf-8")
 
 shopping_file.write("🛒 Shopping List 🛒\n")
@@ -14,7 +12,6 @@ shopping_file.close()
 
 print("✅ Shopping list created successfully! 🎉")
 
-# 2. Read the shopping list
 shopping_file = open(file_name, "r", encoding="utf-8")
 
 print("\n📋 ===== Full Shopping List =====")
@@ -22,8 +19,6 @@ content = shopping_file.read()
 print(content)
 
 shopping_file.close()
-
-# 3. Append new items
 shopping_file = open(file_name, "a", encoding="utf-8")
 
 shopping_file.write("5. 🍚 Rice\n")
@@ -34,7 +29,6 @@ shopping_file.close()
 
 print("🎉 New items added to the shopping list! 🛍️")
 
-# 4. Display the updated shopping list
 shopping_file = open(file_name, "r", encoding="utf-8")
 
 print("\n🆕 ===== Updated Shopping List =====")
@@ -43,7 +37,6 @@ print(updated_content)
 
 shopping_file.close()
 
-# 5. Read the file line by line
 shopping_file = open(file_name, "r", encoding="utf-8")
 
 print("\n📖 ===== Reading Shopping List Line by Line =====")
@@ -56,7 +49,6 @@ for line in shopping_file:
 
 shopping_file.close()
 
-# 6. Display the summary
 print("\n================================")
 print("🛍️ SHOPPING LIST MANAGER SUMMARY 🛒")
 print("================================")
