@@ -1,0 +1,6 @@
+Polymorphism - same method, different behaviour.
+Setter - the only safe was to update.
+If a file does not exist "W" wipes the old content and strats a fresh document.
+read() returns the entire content as one big string.
+len() counts how many lines (items) are in the file.
+'a' mode opens the file and moves to the END.

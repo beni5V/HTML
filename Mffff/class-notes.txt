@@ -1,0 +1,12 @@
+Polymorphism - same method, different behaviour.
+Encapsulation - direct changes does NOT work.
+Setter - the only safe was to update.
+"W" mode creates a file if it does not exist.
+If a file does not exist "W" wipes the old content and strats a fresh document.
+"R" mode opens the file for reading only.
+read() returns the entire content as one big string.
+readlines() returns a list – one item per line.
+len() counts how many lines (items) are in the file.
+Open in "r" mode again to confirm the new items are saved.
+'a' mode opens the file and moves to the END.
+write() now adds new content AFTER the existing content - nothing is deleted.
