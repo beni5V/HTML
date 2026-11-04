@@ -1,0 +1,3 @@
+➕ Addition means finding the total
+➖ Subtraction means taking away
+✖️ Multiplication is repeated addition
