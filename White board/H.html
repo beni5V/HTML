@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Digital Whiteboard</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e9edf5;
+}
+
+header {
+  background: #202938;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  justify-content: center;
+  box-shadow: 0 2px 8px #aaa;
+}
+
+button, input {
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dbeafe;
+}
+
+button.active {
+  background: #2563eb;
+  color: white;
+}
+
+#board {
+  display: block;
+  background: white;
+  margin: 15px auto;
+  border: 2px solid #aaa;
+  max-width: calc(100% - 20px);
+  touch-action: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🎨 My Digital Whiteboard</h2>
+</header>
+
+<div class="toolbar">
+
+<button onclick="setTool('pen')" id="pen" class="active">✏️ Pen</button>
+
+<button onclick="setTool('eraser')" id="eraser">🧽 Eraser</button>
+
+<button onclick="setTool('line')" id="line">📏 Line</button>
+
+<button onclick="setTool('rect')" id="rect">▭ Rectangle</button>
+
+<button onclick="setTool('circle')" id="circle">⭕ Circle</button>
+
+<button onclick="setTool('text')" id="text">🔤 Text</button>
+
+<button onclick="toggleFill()" id="fillBtn">🪣 Fill: OFF</button>
+
+<label>
+Color:
+<input type="color" id="color" value="#000000">
+</label>
+
+<label>
+Size:
+<input type="range" id="size" min="1" max="30" value="4">
+</label>
+
+<button onclick="document.getElementById('imageInput').click()">
+🖼️ Add Image
+</button>
+
+<input type="file" id="imageInput" accept="image/*" hidden>
+
+<button onclick="undo()">↩️ Undo</button>
+
+<button onclick="clearBoard()">🗑️ Clear</button>
+
+<button onclick="download()">💾 Save PNG</button>
+
+</div>
+
+<canvas id="board" width="1200" height="650"></canvas>
+
+<script>
+
+const canvas = document.getElementById("board");
+const ctx = canvas.getContext("2d");
+
+let tool = "pen";
+let drawing = false;
+let startX = 0;
+let startY = 0;
+let color = "#000000";
+let size = 4;
+let fillShape = false;
+
+let history = [];
+
+function saveHistory() {
+  history.push(canvas.toDataURL());
+
+  if (history.length > 50) {
+    history.shift();
+  }
+}
+
+function setTool(t) {
+  tool = t;
+
+  document.querySelectorAll(".toolbar button")
+    .forEach(b => b.classList.remove("active"));
+
+  document.getElementById(t).classList.add("active");
+}
+
+function toggleFill() {
+  fillShape = !fillShape;
+
+  document.getElementById("fillBtn").innerText =
+    fillShape ? "🪣 Fill: ON" : "🪣 Fill: OFF";
+}
+
+function position(e) {
+  const r = canvas.getBoundingClientRect();
+
+  return {
+    x: (e.clientX - r.left) * canvas.width / r.width,
+    y: (e.clientY - r.top) * canvas.height / r.height
+  };
+}
+
+canvas.addEventListener("pointerdown", e => {
+
+  const p = position(e);
+
+  startX = p.x;
+  startY = p.y;
+
+  color = document.getElementById("color").value;
+  size = Number(document.getElementById("size").value);
+
+  if (tool === "text") {
+
+    const text = prompt("Enter your text:");
+
+    if (text) {
+      saveHistory();
+      ctx.fillStyle = color;
+      ctx.font = size * 5 + "px Arial";
+      ctx.fillText(text, p.x, p.y);
+    }
+
+    return;
+  }
+
+  saveHistory();
+
+  drawing = true;
+
+  canvas.setPointerCapture(e.pointerId);
+
+  if (tool === "pen" || tool === "eraser") {
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+  }
+
+});
+
+canvas.addEventListener("pointermove", e => {
+
+  if (!drawing) return;
+
+  const p = position(e);
+
+  color = document.getElementById("color").value;
+  size = Number(document.getElementById("size").value);
+
+  if (tool === "pen" || tool === "eraser") {
+
+    ctx.lineWidth = tool === "eraser" ? size * 5 : size;
+
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+
+    ctx.strokeStyle =
+      tool === "eraser" ? "white" : color;
+
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  }
+
+});
+
+canvas.addEventListener("pointerup", e => {
+
+  if (!drawing) return;
+
+  drawing = false;
+
+  const p = position(e);
+
+  color = document.getElementById("color").value;
+  size = Number(document.getElementById("size").value);
+
+  ctx.strokeStyle = color;
+  ctx.lineWidth = size;
+
+  if (tool === "line") {
+
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+
+  }
+
+  if (tool === "rect") {
+
+    if (fillShape) {
+      ctx.fillStyle = color;
+
+      ctx.fillRect(
+        startX, startY,
+        p.x - startX,
+        p.y - startY
+      );
+    }
+
+    ctx.strokeStyle = color;
+
+    ctx.strokeRect(
+      startX, startY,
+      p.x - startX,
+      p.y - startY
+    );
+
+  }
+
+  if (tool === "circle") {
+
+    ctx.beginPath();
+
+    ctx.ellipse(
+      (startX + p.x) / 2,
+      (startY + p.y) / 2,
+      Math.abs(p.x - startX) / 2,
+      Math.abs(p.y - startY) / 2,
+      0, 0, Math.PI * 2
+    );
+
+    if (fillShape) {
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    ctx.strokeStyle = color;
+    ctx.stroke();
+
+  }
+
+});
+
+canvas.addEventListener("pointercancel", () => {
+  drawing = false;
+});
+
+document.getElementById("imageInput")
+.addEventListener("change", e => {
+
+  const file = e.target.files[0];
+
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("Please select an image file.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = event => {
+
+    const img = new Image();
+
+    img.onload = () => {
+
+      saveHistory();
+
+      const scale = Math.min(
+        400 / img.width,
+        300 / img.height,
+        1
+      );
+
+      const w = img.width * scale;
+      const h = img.height * scale;
+
+      ctx.drawImage(img, 100, 100, w, h);
+
+    };
+
+    img.src = event.target.result;
+
+  };
+
+  reader.readAsDataURL(file);
+
+  e.target.value = "";
+
+});
+
+function undo() {
+
+  if (!history.length) return;
+
+  const previous = history.pop();
+
+  const img = new Image();
+
+  img.onload = () => {
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.drawImage(img, 0, 0);
+
+  };
+
+  img.src = previous;
+
+}
+
+function clearBoard() {
+
+  if (confirm("Are you sure you want to clear the board?")) {
+
+    saveHistory();
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  }
+
+}
+
+function download() {
+
+  const link = document.createElement("a");
+
+  link.download = "My-Whiteboard.png";
+
+  link.href = canvas.toDataURL("image/png");
+
+  link.click();
+
+}
+
+</script>
+
+</body>
+</html>
